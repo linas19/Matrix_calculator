@@ -2,21 +2,21 @@ import  numpy as np
 print("Non linear transport dynamics calculator. Momentum? (M)")
 whatToDo = input()
 if whatToDo == "M":
-	# Kuna veikia taske P jega {F}^T = [Fx,Fy,Fz]. Tasko padeti apibrezia vektorius
-	# {rp}^T=[rpx,rpy,rpz]. Jegos {F} jegu momentas {M} lygus: {M}={rp}x{F}=[rp]{F}
-	#Tasko P padeties vektoriai:
+	# A force is acting on a body at point P {F}^T = [Fx,Fy,Fz]. The point is desribed in vectors
+	# {rp}^T=[rpx,rpy,rpz]. Force {F} if momentum {M} is equal: {M}={rp}x{F}=[rp]{F}
+	#Point P vectors:
 	rx = int(input())
 	ry = int(input())
 	rz = int(input())
 	r = np.matrix([[rx],[ry],[rz]])
 	r_asymetric = np.matrix([[0,-rz,ry], [rz,0,-rx],[-ry,rx,0]])
-	#Jega F^T:
+	#Force F^T:
 	Fx = int(input())
 	Fy = int(input())
 	Fz = int(input())
 	FT = np.matrix([[Fx,Fy,Fz]])
 	F = np.matrix([[Fx], [Fy], [Fz]])
-	#Jegu momentas {M}={rp}x{F}=[rp]{F}:
+	#Momentum {M}={rp}x{F}=[rp]{F}:
 	M = r_asymetric * F
 print(M)
 
